@@ -1,1 +1,0 @@
-int compareBool(bool bool1, bool bool2);
