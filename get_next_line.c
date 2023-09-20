@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:33 by bplante           #+#    #+#             */
-/*   Updated: 2023/09/20 12:30:44 by bplante          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:36:10 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*read_to_buff(char *buffer, int fd)
 	int		read_check;
 
 	read_buffer = malloc(BUFFER_SIZE + 1);
+	if (!read_buffer)
+		return (NULL);
 	read_check = BUFFER_SIZE;
 	while (!ft_strchr(buffer, '\n') && read_check == BUFFER_SIZE)
 	{
@@ -61,6 +63,8 @@ char	*get_line(char *buffer)
 		line = malloc(ft_strchr(buffer, '\n') - buffer + 2);
 	else
 		line = malloc(ft_strlen(buffer) + 1);
+	if (!line)
+		return (NULL);
 	i = 0;
 	while (buffer[i])
 	{
@@ -86,6 +90,8 @@ char	*remove_line(char *buffer)
 	}
 	next_line = ft_strchr(buffer, '\n') + 1;
 	new_buff = malloc(ft_strlen(next_line) + 1);
+	if (!new_buff)
+		return (NULL);
 	i = 0;
 	while (next_line[i])
 	{

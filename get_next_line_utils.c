@@ -6,7 +6,7 @@
 /*   By: bplante <bplante@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 10:18:37 by bplante           #+#    #+#             */
-/*   Updated: 2023/09/20 11:30:02 by bplante          ###   ########.fr       */
+/*   Updated: 2023/09/20 12:36:27 by bplante          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		j;
 
 	str = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!str)
+		return (NULL);
 	i = 0;
 	if (s1)
 	{
